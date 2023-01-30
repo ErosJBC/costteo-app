@@ -1,16 +1,16 @@
-import { FunctionComponent } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AuthLayout, HomeLayout } from '../layouts';
-import { Contactos, Licitaciones, MisCostos, Precios, Proveedores } from '../views';
+import { Contactos, Licitaciones, Login, MisCostos, Precios, Proveedores, Register } from '../views';
+import PublicRouter from './PublicRouter';
+import PrivateRouter from './PrivateRouter';
 
-const AppRouter: FunctionComponent<{}> = () => {
+const AppRouter = () => {
     return (
         <Routes>
-            <Route path='auth' element={<AuthLayout />}>
-                <Route index path='login' element={<Precios />} />
-                <Route index path='register' element={<Precios />} />
+            <Route path='auth' element={<PublicRouter />}>
+                <Route index path='login' element={<Login />} />
+                <Route path='register' element={<Register />} />
             </Route>
-            <Route path='home' element={<HomeLayout />}>
+            <Route path='' element={<PrivateRouter />}>
                 <Route index element={<Precios />} />
                 <Route path='proveedores' element={<Proveedores />} />
                 <Route path='licitaciones' element={<Licitaciones />} />

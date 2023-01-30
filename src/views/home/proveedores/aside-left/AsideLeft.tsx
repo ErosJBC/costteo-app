@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Card, FormControl, Grid, IconButton, InputAdornment, InputLabel, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, OutlinedInput } from '@mui/material';
 import { ArrowForward, ChevronRight, DoubleArrow, Place, Search } from '@mui/icons-material';
-import { ITEMS_ASIDE_LEFT_PROVEEDORES } from '../../../constants';
+import { ITEMS_ASIDE_LEFT_PROVEEDORES } from '../../../../constants';
 
 const AsideLeft: FunctionComponent<{}> = () => {
     return (

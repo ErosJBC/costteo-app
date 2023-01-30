@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Box, Button, Divider, Grid } from '@mui/material';
-import { ITEMS_LICITACIONES } from '../../constants';
+import { ITEMS_LICITACIONES } from '../../../constants';
 import SearchLicitaciones from './search-licitaciones/SearchLicitaciones';
 import AsideRight from './aside-right/AsideRight';
 

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { Box, Card, FormControl, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import { ProviderCard } from '../../../components';
-import { ITEMS_SEARCH_PROVIDERS } from '../../../constants';
+import { ProviderCard } from '../../../../components';
+import { ITEMS_SEARCH_PROVIDERS } from '../../../../constants';
 
 const SearchProviders: FunctionComponent<{}> = () => {
     return (

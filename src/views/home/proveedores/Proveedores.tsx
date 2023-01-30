@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { ITEMS_PROVEEDORES, SUBITEMS_PROVEEDORES } from '../../constants';
+import { ITEMS_PROVEEDORES, SUBITEMS_PROVEEDORES } from '../../../constants';
 import { Box, Button, Divider, Grid, Typography } from '@mui/material';
 import AsideRight from './aside-right/AsideRight';
 import AsideLeft from './aside-left/AsideLeft';

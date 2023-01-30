@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Box, Grid, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Card, Button } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import { SUBITEMS_LICITACIONES } from '../../../constants';
+import { SUBITEMS_LICITACIONES } from '../../../../constants';
 
 const SearchLicitaciones: FunctionComponent<{}> = () => {
     return (

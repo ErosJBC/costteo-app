@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Card, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
 import { ArrowForward, ChevronRight, DoubleArrow, Place } from '@mui/icons-material';
-import { ITEMS_ASIDE_RIGHT_LICITACIONES } from '../../../constants';
+import { ITEMS_ASIDE_RIGHT_LICITACIONES } from '../../../../constants';
 
 const AsideRight: FunctionComponent<{}> = () => {
     return (

@@ -1,3 +1,5 @@
+export const URL_BASE: string = "https://script.google.com/macros/s/AKfycbza9R84fupE2Z3bFB54YU2R-8tPsCzz80BRW7ctOF37N_oh-HsE5_XgnyNVgw04W3iy/exec";
+
 export const ITEMS_NAVBAR = [
     { path: "", name: "Precios" },
     { path: "proveedores", name: "Proveedores" },

@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
-import { ITEMS_CLIENTES_CONTACTOS, ITEMS_CONTACTOS } from '../../constants';
+import { ITEMS_CLIENTES_CONTACTOS, ITEMS_CONTACTOS } from '../../../constants';
 import { Box, Button, Divider, Grid } from '@mui/material';
 import { Add } from '@mui/icons-material';
-import { ContactCard } from '../../components';
+import { ContactCard } from '../../../components';
+
 
 const Contactos: FunctionComponent<{}> = () => {
     return (

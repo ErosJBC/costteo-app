@@ -1,13 +1,16 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { AppRouter } from './routes';
+import { AppRouter } from './routes'
+import { AuthContextProvider } from './contexts';
 
 const App: FunctionComponent<{}> = () => {
 
     return (
-        <BrowserRouter>
-            <AppRouter />
-        </BrowserRouter>
+        <AuthContextProvider>
+            <BrowserRouter>
+                <AppRouter />
+            </BrowserRouter>
+        </AuthContextProvider>
     )
 }
 
