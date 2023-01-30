@@ -27,6 +27,18 @@ export const ITEMS_LICITACIONES = [
     { name: "Crear Licitación", color: "bg-blue-custom" },
 ];
 
+export const SUBITEMS_LICITACIONES = [
+    { name: "Productos", color: "bg-blue-custom" },
+    { name: "Servicios", color: "bg-orange-custom" },
+    { name: "Adjudicados", color: "bg-blue-custom" },
+];
+
+
+export const ITEMS_CONTACTOS = [
+    { name: "Clientes", color: "bg-orange-custom" },
+    { name: "Proveedores", color: "bg-blue-custom" },
+];
+
 export const ITEMS_ASIDE_RIGHT_PROVEEDORES = [
     {
         title: "Materiales",
@@ -58,6 +70,41 @@ export const ITEMS_ASIDE_RIGHT_PROVEEDORES = [
             { title: "Concreto Premezclado" },
             { title: "Prefabricados" },
             { title: "Carpintería metálica" }
+        ]
+    },
+];
+
+export const ITEMS_ASIDE_RIGHT_LICITACIONES = [
+    {
+        title: "Sector",
+        subitems: [
+            { title: "Construcción" },
+            { title: "Industria y manufactura" },
+            { title: "Minería" },
+            { title: "Energías" },
+            { title: "Telecomunicaciones" },
+            { title: "Logísticas y transporte" },
+            { title: "Sistemas y TI" },
+        ]
+    },
+    {
+        title: "Ubicación",
+        subitems: [
+            { title: "Departamento" },
+            { title: "Provincia" },
+            {
+                title: "Distrito",
+                subitems: [
+                    { title: "ver en mapa" }
+                ],
+            }
+        ]
+    },
+    {
+        title: "Tipo de Entidad",
+        subitems: [
+            { title: "Pública" },
+            { title: "Privada" },
         ]
     },
 ];

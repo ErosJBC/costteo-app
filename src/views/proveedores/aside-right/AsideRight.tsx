@@ -32,7 +32,7 @@ const AsideRight: FunctionComponent<{}> = () => {
                         {item.subitems &&
                             item.subitems.map((subitem) => (
                                 <List component="div" disablePadding>
-                                    <ListItemButton sx={{ pl: 4, height: 45 }}>
+                                    <ListItemButton sx={{ pl: 3, height: 45 }}>
                                         <ListItemIcon>
                                             <ChevronRight />
                                         </ListItemIcon>

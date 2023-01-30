@@ -1,6 +1,8 @@
 import { FunctionComponent } from 'react';
 import { Box, Button, Divider, Grid } from '@mui/material';
 import { ITEMS_LICITACIONES } from '../../constants';
+import SearchLicitaciones from './search-licitaciones/SearchLicitaciones';
+import AsideRight from './aside-right/AsideRight';
 
 const Licitaciones: FunctionComponent<{}> = () => {
     return (
@@ -24,14 +26,11 @@ const Licitaciones: FunctionComponent<{}> = () => {
             </Box>
             <Divider sx={{ marginTop: 2, height: 2 }} className="bg-blue-custom" />
             <Grid container>
-                <Grid item xs={3}>
-
+                <Grid item xs={12} md={4} lg={3} xl={2.5}>
+                    <AsideRight />
                 </Grid>
-                <Grid item xs={4}>
-
-                </Grid>
-                <Grid item xs={3}>
-
+                <Grid item xs={12} md={8} lg={9} xl={9.5}>
+                    <SearchLicitaciones />
                 </Grid>
             </Grid>
         </>
