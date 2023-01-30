@@ -50,7 +50,7 @@ const SearchProviders: FunctionComponent<{}> = () => {
                     >
                         <Grid container rowSpacing={2}>
                             {ITEMS_SEARCH_PROVIDERS.map((item) => (
-                                <Grid item xs={12}>
+                                <Grid key={item.name} item xs={12}>
                                     <ProviderCard {...item} />
                                 </Grid>
                             ))}

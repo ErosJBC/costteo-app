@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react'
+import { Outlet } from 'react-router-dom'
 
 const AuthLayout: FunctionComponent<{}> = () => {
     return (
-        <div>AuthLayout</div>
+        <Outlet />
     )
 }
 

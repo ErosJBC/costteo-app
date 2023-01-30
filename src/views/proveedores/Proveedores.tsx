@@ -30,7 +30,7 @@ const Proveedores: FunctionComponent<{}> = () => {
                 {SUBITEMS_PROVEEDORES.map((item, index) => {
                     return (
                         index === 0 ?
-                            <Typography textAlign="center" fontWeight="500" alignSelf="center">
+                            <Typography key={item.name} textAlign="center" fontWeight="500" alignSelf="center">
                                 {item.name}
                             </Typography>
                             :

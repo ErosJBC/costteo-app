@@ -21,25 +21,25 @@ const AsideRight: FunctionComponent<{}> = () => {
                     </ListSubheader>
                 }
             >
-                {ITEMS_ASIDE_RIGHT_PROVEEDORES.map((item) => (
+                {ITEMS_ASIDE_RIGHT_PROVEEDORES.map((item, index) => (
                     <>
-                        <ListItemButton sx={{ height: 45 }}>
+                        <ListItemButton key={index} sx={{ height: 45 }}>
                             <ListItemIcon>
                                 <DoubleArrow />
                             </ListItemIcon>
                             <ListItemText primary={item.title} />
                         </ListItemButton>
                         {item.subitems &&
-                            item.subitems.map((subitem) => (
-                                <List component="div" disablePadding>
-                                    <ListItemButton sx={{ pl: 3, height: 45 }}>
+                            <List component="div" disablePadding>
+                                {item.subitems.map((subitem, index) => (
+                                    <ListItemButton key={index} sx={{ pl: 3, height: 45 }}>
                                         <ListItemIcon>
                                             <ChevronRight />
                                         </ListItemIcon>
                                         <ListItemText primary={subitem.title} />
                                     </ListItemButton>
-                                </List>
-                            ))
+                                ))}
+                            </List>
                         }
                     </>
                 ))}

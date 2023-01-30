@@ -74,6 +74,41 @@ export const ITEMS_ASIDE_RIGHT_PROVEEDORES = [
     },
 ];
 
+export const ITEMS_ASIDE_LEFT_PROVEEDORES = [
+    {
+        title: "Ubicación",
+        subitems: [
+            { title: "Departamento" },
+            { title: "Provincia" },
+            {
+                title: "Distrito",
+                subitems: [
+                    { title: "ver en mapa" }
+                ],
+            }
+        ]
+    },
+    { title: "Experiencia" },
+    {
+        title: "Garantía",
+        subitems: [
+            { title: "6 meses" },
+            { title: "1 año" },
+            { title: "Más ..." },
+        ]
+    },
+    {
+        title: "Forma de Pago",
+        subitems: [
+            { title: "Inmediato" },
+            { title: "Crédito 15 días" },
+            { title: "Crédito 30 días" },
+            { title: "Más ..." },
+        ]
+    },
+    { title: "Certificaciones" },
+];
+
 export const ITEMS_ASIDE_RIGHT_LICITACIONES = [
     {
         title: "Sector",
@@ -115,4 +150,12 @@ export const ITEMS_SEARCH_PROVIDERS = [
     { name: "Multiservicios", description: "Pintor, gasfitero, albañil, otros, pequeños arreglos", logo: "", score: 3, calification: 68 },
     { name: "Jm Group Cold Systems Peru Sac", description: "Electricista, técnico de aire, técnico de electrodomésticos, otros, pequeños", logo: "", score: 3, calification: 30 },
     { name: "Taller De Servicios y Soluciones En", description: "Carpintero, techista, otros, drywall", logo: "", score: 3, calification: 18 },
-]
+];
+
+export const ITEMS_CLIENTES_CONTACTOS = [
+    { business_name: "Preconstruction S.A.C", address: "Av. Los Tulipanes Mz. F Lt. 12 - Carapongo, Lurigancho", telephone: "945617528 / 73977152", email: "ventas1@precon.comp.pe", logo: "", pending_quotation: "01", approved_quotation: "01" },
+    { business_name: "Indra Perú S.A.C", address: "Av. Los Tulipanes Mz. F Lt. 12 - Carapongo, Lurigancho", telephone: "945617528 / 73977152", email: "informes@indracompany.comp", logo: "", pending_quotation: "03" },
+    { business_name: "Preconstruction S.A.C", address: "Av. Los Tulipanes Mz. F Lt. 12 - Carapongo, Lurigancho", telephone: "945617528 / 73977152", email: "ventas1@precon.comp.pe", logo: "", messages: "Mensajes por responder" },
+    { business_name: "Preconstruction S.A.C", address: "Av. Los Tulipanes Mz. F Lt. 12 - Carapongo, Lurigancho", telephone: "945617528 / 73977152", email: "ventas1@precon.comp.pe", logo: "", pending_quotation: "01" },
+    { business_name: "Preconstruction S.A.C", address: "Av. Los Tulipanes Mz. F Lt. 12 - Carapongo, Lurigancho", telephone: "945617528 / 73977152", email: "ventas1@precon.comp.pe", logo: "", approved_quotation: "02" },
+];

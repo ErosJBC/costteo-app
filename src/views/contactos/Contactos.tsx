@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { ITEMS_CONTACTOS } from '../../constants';
+import { ITEMS_CLIENTES_CONTACTOS, ITEMS_CONTACTOS } from '../../constants';
 import { Box, Button, Divider, Grid } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { ContactCard } from '../../components';
@@ -44,10 +44,12 @@ const Contactos: FunctionComponent<{}> = () => {
                 </Grid>
             </Grid>
             <Divider sx={{ marginTop: 2, height: 2 }} className="bg-blue-custom" />
-            <Grid container marginTop={3} paddingX={5}>
-                <Grid item xs={12}>
-                    <ContactCard />
-                </Grid>
+            <Grid container marginTop={3} paddingX={5} rowSpacing={2}>
+                {ITEMS_CLIENTES_CONTACTOS.map((item, index) => (
+                    <Grid key={index} item xs={12}>
+                        <ContactCard {...item} />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )

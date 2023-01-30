@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppBar, Box, Button, IconButton, Toolbar, useTheme } from '@mui/material';
+import { AppBar, Box, Button, IconButton, List, ListItemButton, ListItemText, Toolbar, useTheme } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import { ITEMS_NAVBAR } from '../../constants';
 import logo from '../../assets/logo.png';
@@ -34,28 +34,32 @@ const Navbar: FunctionComponent<{}> = () => {
                     >
                         <Menu />
                     </IconButton>
-                    <Box>
-                        <img src={logo} width={120} alt="logo-page" />
+                    <Box className="cursor-pointer">
+                        <img src={logo} width={120} alt="logo-page" onClick={() => handleClickGoToPath("")} />
                     </Box>
                     <Box flexGrow={1} />
                     <Box display="flex" gap={3}>
-                        {ITEMS_NAVBAR.map((item) => (
-                            <Button
-                                key={item.path}
-                                sx={{
-                                    textTransform: "initial",
-                                    paddingX: 2,
-                                    "&:hover": {
-                                        border: 1,
-                                        borderColor: "red"
-                                    }
-                                }}
-                                className="text-neutral-900 font-normal shadow-none hover:bg-transparent hover:text-red-600 hover:font-medium"
-                                onClick={() => handleClickGoToPath(item.path)}
-                            >
-                                {item.name}
-                            </Button>
-                        ))}
+                        <List component="nav" sx={{ display: "flex" }}>
+                            {ITEMS_NAVBAR.map((item) => (
+                                <ListItemButton
+                                    key={item.path}
+                                    sx={{
+                                        textTransform: "initial",
+                                        paddingX: 2,
+                                        "&:hover": {
+                                            border: 1,
+                                            borderColor: "rgb(220, 38, 38)",
+                                            backgroundColor: "transparent",
+                                        }
+                                    }}
+                                    selected={document.location.pathname === `/home${item.path !== "" ? `/${item.path}` : ""}`}
+                                    onClick={() => handleClickGoToPath(item.path)}
+                                    className="text-neutral-900 font-normal shadow-none hover:bg-transparent hover:text-red-600"
+                                >
+                                    <ListItemText primary={item.name} />
+                                </ListItemButton>
+                            ))}
+                        </List>
                     </Box>
                 </Toolbar>
             </AppBar>
