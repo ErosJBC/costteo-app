@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react'
+import { PageBuild } from '../../others'
 
 const MisCostos: FunctionComponent<{}> = () => {
     return (
-        <div>MisCostos</div>
+        <PageBuild />
     )
 }
 

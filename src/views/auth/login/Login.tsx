@@ -7,9 +7,8 @@ import { callToGoogleAppsScriptAPI } from '../../../services';
 import { useAuthContext } from '../../../contexts';
 import { CustomSnackbar } from '../../../components';
 
-
 const Login: FunctionComponent<{}> = () => {
-    const { login } = useAuthContext();
+    const { login, loadingProgressBar, noLoadingProgressBar, onBackdrop, offBackdrop } = useAuthContext();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [user, setUser] = useState<ICredentials>({
@@ -68,14 +67,12 @@ const Login: FunctionComponent<{}> = () => {
         if (email !== null) setUser(prevState => ({ ...prevState, email: { value: email } }));
     }
 
-    useEffect(() => {
-        getEmailFromLocalStorage();
-    }, []);
-
     const handleClickLoginUser = async () => {
         if (user.email.value !== "" && user.password.value !== "") {
+            loadingProgressBar();
             const response = await callToGoogleAppsScriptAPI({ action: "loginUser", data: { email: user.email.value, password: user.password.value } });
             if (response.status) {
+                noLoadingProgressBar();
                 console.log(response.data);
                 localStorage.setItem('token', JSON.stringify(response.data[0].token));
                 setMessage(prevState => ({ ...prevState, success: response.message }))
@@ -84,10 +81,13 @@ const Login: FunctionComponent<{}> = () => {
                     setSnackbar(prevState => ({ ...prevState, success: false }));
                     setMessage(prevState => ({ ...prevState, success: "" }));
                 }, 5000);
+                onBackdrop();
                 setTimeout(() => {
                     login();
+                    offBackdrop();
                 }, 3000);
             } else {
+                noLoadingProgressBar();
                 console.log(response.message)
                 setMessage(prevState => ({ ...prevState, error: response.message }))
                 setSnackbar(prevState => ({ ...prevState, error: true }));
@@ -104,6 +104,10 @@ const Login: FunctionComponent<{}> = () => {
             }));
         }
     }
+
+    useEffect(() => {
+        getEmailFromLocalStorage();
+    }, []);
 
     return (
         <>

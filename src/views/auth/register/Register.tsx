@@ -5,8 +5,10 @@ import { Box, Button, Card, FormControl, FormHelperText, Grid, IconButton, Input
 import { IUser } from '../../../models';
 import { CustomSnackbar } from '../../../components';
 import { callToGoogleAppsScriptAPI } from '../../../services';
+import { useAuthContext } from '../../../contexts';
 
 const Register: FunctionComponent<{}> = () => {
+    const { loadingProgressBar, noLoadingProgressBar, onBackdrop, offBackdrop } = useAuthContext();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [user, setUser] = useState<IUser>({
@@ -89,6 +91,7 @@ const Register: FunctionComponent<{}> = () => {
 
     const handleClickRegisterUser = async () => {
         if (user.email.value !== "" && user.password.value !== "" && user.names.value !== "" && user.lastnames.value !== "" && user.phone.value !== "" && user.company.value !== "" && user.rol.value !== "" && user.commentaries.value !== "") {
+            loadingProgressBar();
             const response = await callToGoogleAppsScriptAPI({
                 action: "registerUser",
                 data: {
@@ -104,6 +107,7 @@ const Register: FunctionComponent<{}> = () => {
                 }
             });
             if (response.status) {
+                noLoadingProgressBar();
                 console.log(response.data);
                 setMessage(prevState => ({ ...prevState, success: response.message }))
                 setSnackbar(prevState => ({ ...prevState, success: true }));
@@ -111,12 +115,15 @@ const Register: FunctionComponent<{}> = () => {
                     setSnackbar(prevState => ({ ...prevState, success: false }));
                     setMessage(prevState => ({ ...prevState, success: "" }));
                 }, 5000);
+                onBackdrop();
                 setTimeout(() => {
                     navigate('/auth/login');
+                    offBackdrop();
                 }, 3000);
             } else {
                 if (response.data.length > 0) {
                     if (response.data[0].registered) {
+                        noLoadingProgressBar();
                         console.log(response.message)
                         setMessage(prevState => ({ ...prevState, info: response.message }))
                         setSnackbar(prevState => ({ ...prevState, info: true }));
@@ -126,7 +133,8 @@ const Register: FunctionComponent<{}> = () => {
                         }, 5000);
                     }
                 } else {
-                    console.log(response.message)
+                    console.log(response.message);
+                    noLoadingProgressBar();
                     setMessage(prevState => ({ ...prevState, error: response.message }))
                     setSnackbar(prevState => ({ ...prevState, error: true }));
                     setTimeout(() => {
